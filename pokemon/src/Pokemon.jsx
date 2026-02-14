@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import PokemonCards from './PokemonCards'
 
 const Pokemon = () => {
     const [pokemonData, setPokemonData] = useState([])
@@ -45,7 +46,7 @@ const Pokemon = () => {
                 <ul className="">
                     {
                         pokemonData.map((curPokemon) => {
-                            return <li key={curPokemon.id} > {curPokemon.name} </li>
+                            return <PokemonCards key={curPokemon.id} curPokemon={curPokemon} />
                         })
                     }
                 </ul>
