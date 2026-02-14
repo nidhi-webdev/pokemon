@@ -1,9 +1,10 @@
-import React from 'react'
+import Pokemon from './Pokemon'
+
 
 const App = () => {
   return (
     <div>
-     Welcome to Pokemon
+     <Pokemon />
     </div>
   )
 }
