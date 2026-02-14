@@ -4,14 +4,19 @@ const Pokemon = () => {
     // const [PokemonData, setPokemonData] = useState("")
 
 
-    const PokemonApi = "https://pokeapi.co/api/v2/pokemon"
+    const PokemonApi = "https://pokeapi.co/api/v2/pokemon?limit=24"
 
     const fetchApi = async () => {
         try {
             const res = await fetch(PokemonApi)
             const data = await res.json()
-            console.log("there is data from Pokemon", data);
 
+            const detailedPokemonData = data.results.map(async (curPokemon) => {
+                const res = await fetch(curPokemon.url)
+                const data = await res.json()
+                return data
+            })
+            console.log(detailedPokemonData)
         } catch (error) {
             console.log(error)
 
