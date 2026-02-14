@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 
 const Pokemon = () => {
-    // const [PokemonData, setPokemonData] = useState("")
+    const [pokemonData, setPokemonData] = useState([])
 
 
     const PokemonApi = "https://pokeapi.co/api/v2/pokemon?limit=24"
@@ -19,6 +19,7 @@ const Pokemon = () => {
             })
             const detailedResponse = await Promise.all(detailedPokemonData)
             console.log(detailedResponse)
+            setPokemonData(detailedResponse)
 
         } catch (error) {
             console.log(error)
@@ -38,6 +39,16 @@ const Pokemon = () => {
 
             <div>
                 <input type="text" placeholder="Search Pokemon" className="px-4 py-3 border-b-2 border-black pt-7 outline-0" />
+            </div>
+
+            <div>
+                <ul className="">
+                    {
+                        pokemonData.map((curPokemon) => {
+                            return <li key={curPokemon.id} > {curPokemon.name} </li>
+                        })
+                    }
+                </ul>
             </div>
         </div>
         // </div>
