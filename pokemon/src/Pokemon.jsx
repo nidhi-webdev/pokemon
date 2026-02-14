@@ -15,8 +15,11 @@ const Pokemon = () => {
                 const res = await fetch(curPokemon.url)
                 const data = await res.json()
                 return data
+
             })
-            console.log(detailedPokemonData)
+            const detailedResponse = await Promise.all(detailedPokemonData)
+            console.log(detailedResponse)
+
         } catch (error) {
             console.log(error)
 
