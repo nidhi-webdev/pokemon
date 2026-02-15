@@ -3,7 +3,8 @@ import PokemonCards from './PokemonCards'
 
 const Pokemon = () => {
     const [pokemonData, setPokemonData] = useState([])
-
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState()
 
     const PokemonApi = "https://pokeapi.co/api/v2/pokemon?limit=24"
 
@@ -21,16 +22,21 @@ const Pokemon = () => {
             const detailedResponse = await Promise.all(detailedPokemonData)
             console.log(detailedResponse)
             setPokemonData(detailedResponse)
+            setLoading(false)
 
         } catch (error) {
             console.log(error)
-
+            setLoading(false)
         }
     }
 
     useEffect(() => {
         fetchApi()
     }, [])
+
+    if (loading) {
+        return <h1 className="flex justify-center items-center font-bold text-3xl min-h-screen"> Loading... </h1>
+    }
 
 
     return (
