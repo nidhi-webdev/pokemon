@@ -4,9 +4,9 @@ import PokemonCards from './PokemonCards'
 const Pokemon = () => {
     const [pokemonData, setPokemonData] = useState([])
     const [loading, setLoading] = useState(true)
-    const [error, setError] = useState()
+    const [error, setError] = useState(null)
 
-    const PokemonApi = "https://pokeapi.co/api/v2/pokemon?limit=24"
+    const PokemonApi = "https://pokeapi.co/api/v2/pokemons?limit=24"
 
     const fetchApi = async () => {
         try {
@@ -27,6 +27,7 @@ const Pokemon = () => {
         } catch (error) {
             console.log(error)
             setLoading(false)
+            setError(error)
         }
     }
 
@@ -38,9 +39,12 @@ const Pokemon = () => {
         return <h1 className="flex justify-center items-center font-bold text-3xl min-h-screen"> Loading... </h1>
     }
 
+    if (error) {
+        return <h1 className="flex justify-center items-center font-bold text-3xl min-h-screen"> {error.message} </h1>
+    }
+
 
     return (
-        // <div className="bg-red-300 min-h-screen">
         <div className="flex flex-col items-center bg-blue-50 min-h-screen ">
             <h1 className="font-extrabold text-3xl mt-10"> Let's Catch Pokemon </h1>
 
