@@ -43,16 +43,16 @@ const Pokemon = () => {
             </div>
 
             <div>
-                <ul className="">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
                     {
                         pokemonData.map((curPokemon) => {
                             return <PokemonCards key={curPokemon.id} curPokemon={curPokemon} />
                         })
                     }
-                </ul>
+
+                </div>
             </div>
         </div>
-        // </div>
 
     )
 }
