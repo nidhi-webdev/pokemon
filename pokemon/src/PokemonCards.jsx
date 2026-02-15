@@ -4,7 +4,7 @@ const PokemonCards = ({ curPokemon }) => {
     // console.log(props);
 
     return (
-        <div className='flex flex-col items-center bg-white shadow-lg rounded-lg p-4 m-4 w-48'>
+        <div className='flex flex-col items-center bg-white shadow-lg rounded-lg p-4 m-4 w-70'>
             <img
                 src={curPokemon.sprites?.front_default}
                 alt={curPokemon.name}
