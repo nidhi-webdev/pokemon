@@ -17,9 +17,9 @@ const PokemonCards = ({ curPokemon }) => {
             </div>
 
             <div className='mt-4 flex justify-between w-full text-sm px-2 gap-1'>
-                <span className="whitespace-nowrap"> <b>Experience:</b> {curPokemon.base_experience}</span>
-                <span className="whitespace-nowrap"> <b>Attack:</b> {curPokemon?.stats[1]?.base_stat}</span>
-                <span className="whitespace-nowrap"> <b>Speed:</b> {curPokemon.stats[5].base_stat}</span>
+                <span className="whitespace-nowrap"> <b>Experience:</b> <br />{curPokemon.base_experience}</span>
+                <span className="whitespace-nowrap"> <b>Attack:</b> <br /> {curPokemon?.stats[1]?.base_stat}</span>
+                <span className="whitespace-nowrap"> <b>abilities:</b>  <br /> {curPokemon.abilities.map((abilitiesName) => abilitiesName.ability.name).slice(0,1).join(",")}</span>
             </div>
         </div>
     )
