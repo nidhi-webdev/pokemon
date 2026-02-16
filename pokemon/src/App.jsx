@@ -1,10 +1,12 @@
 import Pokemon from './Pokemon'
+import UserefExample from './useEffect/Example'
 
 
 const App = () => {
   return (
     <div>
-     <Pokemon />
+     {/* <Pokemon /> */}
+     <UserefExample />
     </div>
   )
 }
