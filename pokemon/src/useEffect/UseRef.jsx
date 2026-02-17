@@ -8,7 +8,8 @@ export const UseRefParent = () => {
         e.preventDefault()
        console.log("username is:", usernameRef.current.value);
        console.log("Password is:", passwordRef.current.value)
-       
+       usernameRef.current.value = ""
+       passwordRef.current.value = ""
     }
 
     return (
