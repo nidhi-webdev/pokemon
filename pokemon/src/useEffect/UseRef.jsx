@@ -6,6 +6,8 @@ export const UseRefParent = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault()
+       console.log("username is:", usernameRef.current.value);
+       console.log("Password is:", passwordRef.current.value)
        
     }
 
