@@ -1,37 +1,30 @@
-import { useId } from "react"
-import { useRef } from "react"
+import { useId, useRef } from "react"
 
 export const UseRefParent = () => {
-    const username = useRef(null)
-    const password = useRef(null)
+    const usernameRef = useRef(null)
+    const passwordRef = useRef(null)
 
     const handleFormSubmit = (e) => {
         e.preventDefault()
-
+       
     }
 
     return (
-        <form onSubmit={handleFormSubmit}>
-            <ChildRef label="username" ref={username} />
-            <ChildRef label="password" ref={password} />
+        <form onSubmit={handleFormSubmit} className="flex flex-col gap-4 p-4 ">
+            <ChildRef label="Username" ref={usernameRef} type="text" />
+            <ChildRef label="Password" ref={passwordRef} type="password" />
+            <button type="submit" className="bg-blue-900 text-white px-4 py-2 rounded">Submit</button>
         </form>
     )
 }
-
-
-
 
 export const ChildRef = (props) => {
     const id = useId()
 
     return (
-        <div>
-            <label htmlFor={id}> {props.label}  </label>
-            <input type="text" ref={props.ref} />
-
-            <label htmlFor={id}> {props.label}  </label>
-            <input type="password" ref={props.ref} />
-
+        <div className="flex flex-col">
+            <label htmlFor={id}>{props.label}</label>
+            <input id={id} type={props.type} ref={props.ref} className="text-black p-1 rounded" />
         </div>
     )
 }
