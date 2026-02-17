@@ -6,11 +6,10 @@ const UserefExample = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault()
-        console.log("Username is:", username.current);
-        console.log("Password is:", password.current);
-      
-
-
+        console.log("Username is:", username.current.value);
+        console.log("Password is:", password.current.value);
+        username.current.value = "";
+        password.current.value = "";
     }
 
     return (
