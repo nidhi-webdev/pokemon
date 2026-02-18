@@ -6,12 +6,19 @@ import { createContext } from "react";
 export const BoiContext = createContext()
 
 
+
+
+
 // make provider component 
-export const BoiProvider = ({chi}) => {
+export const BioProvider = ({ children }) => {
 
     const data = "Nidhi"
+    console.log(children);
 
-    return <BoiContext.Provider value={data}>
 
+    return (
+    <BoiContext.Provider value={data}>
+        {children}
     </BoiContext.Provider>
+    )
 }
