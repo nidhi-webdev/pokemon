@@ -9,7 +9,9 @@ export const BoiContext = createContext()
 // make provider component 
 export const BoiProvider = () => {
 
-    return <BoiContext.Provider>
+    const data = "Nidhi"
+
+    return <BoiContext.Provider value={data}>
 
     </BoiContext.Provider>
 }
