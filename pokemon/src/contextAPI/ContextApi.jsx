@@ -7,7 +7,7 @@ export const BoiContext = createContext()
 
 
 // make provider component 
-export const BoiProvider = () => {
+export const BoiProvider = ({chi}) => {
 
     const data = "Nidhi"
 
