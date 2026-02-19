@@ -3,6 +3,7 @@ import UserefExample from './useEffect/Example'
 import { UseRefParent } from './useEffect/UseRef'
 import UserId from './useId/UserId'
 import Home from './contextAPI/Home'
+import About from './contextAPI/About'
 import { BioProvider } from './contextAPI/ContextApi'
 
 
@@ -16,6 +17,7 @@ const App = () => {
 
       <BioProvider>
         <Home />
+        <About />
       </BioProvider>
 
     </div>
