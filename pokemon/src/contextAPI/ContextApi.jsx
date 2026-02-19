@@ -12,12 +12,12 @@ export const BoiContext = createContext()
 // make provider component 
 export const BioProvider = ({ children }) => {
 
-    const data = "Nidhi"
-    console.log(children);
+    const name = "Nidhi"
+    const age = 30
 
 
     return (
-    <BoiContext.Provider value={data}>
+    <BoiContext.Provider value={{name , age }}>
         {children}
     </BoiContext.Provider>
     )
