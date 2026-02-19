@@ -17,9 +17,9 @@ export const BioProvider = ({ children }) => {
 
 
     return (
-    <BoiContext.Provider value={{name , age }}>
-        {children}
-    </BoiContext.Provider>
+        <BoiContext.Provider value={{ name, age }}>
+            {children}
+        </BoiContext.Provider>
     )
 }
 
@@ -27,5 +27,8 @@ export const BioProvider = ({ children }) => {
 // customs hook
 export const useBoiContext = () => {
     const context = useContext(BoiContext)
+    if (context === undefined) {
+        throw new Error("Context written outside of the Provider in App")
+    }
     return context
 }

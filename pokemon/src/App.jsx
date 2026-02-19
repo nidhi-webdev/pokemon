@@ -18,8 +18,9 @@ const App = () => {
 {/* We have to write the component under this tag to make it children of it */}
       <BioProvider>
         <Home />
-        <About />
+        
       </BioProvider>
+      <About />
 
     </div>
   )
