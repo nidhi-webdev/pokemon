@@ -1,6 +1,6 @@
 // Create Context Component 
 
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 
 
 export const BoiContext = createContext()
@@ -21,4 +21,11 @@ export const BioProvider = ({ children }) => {
         {children}
     </BoiContext.Provider>
     )
+}
+
+
+// customs hook
+export const useBoiContext = () => {
+    const context = useContext(BoiContext)
+    return context
 }

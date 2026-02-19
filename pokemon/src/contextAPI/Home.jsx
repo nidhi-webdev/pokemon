@@ -1,9 +1,8 @@
-import  { useContext } from 'react'
-import { BoiContext } from '../contextAPI/ContextApi'
+import { useBoiContext } from '../contextAPI/ContextApi'
 
 const Home = () => {
 
-const {name, age} = useContext(BoiContext)
+const {name, age} = useBoiContext()
 
   return (
     <div>

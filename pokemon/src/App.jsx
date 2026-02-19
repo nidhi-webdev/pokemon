@@ -15,6 +15,7 @@ const App = () => {
       {/* <UseRefParent /> */}
       {/* <UserId /> */}
 
+{/* We have to write the component under this tag to make it children of it */}
       <BioProvider>
         <Home />
         <About />
