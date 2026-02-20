@@ -31,7 +31,7 @@ export const DarkLightComp = () => {
     ${theme === "dark" ? "bg-gray-800" : "bg-white"}`}>
 
         <h1 className={`font-extrabold text-4xl ${theme === "dark" ? "text-white" : "text-black"}`}> Dark Light Mode Website </h1>
-        <p className="font-bold text-2xl"> Hello !! My React v19 Fans </p>
+        <p className={`font-bold text-2xl ${theme == "dark" ? "text-white" : "text-black"}`}> Hello !! My React v19 Fans </p>
         <button className="bg-blue-500 rounded px-4 py-2 hover:bg-blue-600 cursor-pointer text-white"
             onClick={handleToggleTheme}>
             {theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
