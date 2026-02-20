@@ -1,6 +1,6 @@
 // creating a Context
 
-import { createContext, useState } from "react";
+import { createContext, use, useState } from "react";
 
 
 export const ThemeContext = createContext()
@@ -11,15 +11,25 @@ export const ThemeContext = createContext()
 export const ThemeProvider = ({ children }) => {
     const [theme, setTheme] = useState("dark")
 
-    return <ThemeContext.Provider value={theme} > {children}   </ThemeContext.Provider>
+
+    const handleToggleTheme = () => {
+        return setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"))
+    }
+
+    return <ThemeContext.Provider value={{ theme, handleToggleTheme }} >
+        {children}
+    </ThemeContext.Provider>
 }
 
 
 // Component 
 export const DarkLightComp = () => {
+    const { theme, handleToggleTheme } = use(ThemeContext)
+
+
     return <div>
         <h1> Dark Light Mode Website </h1>
         <p> Hello !! My React v19 Fans </p>
-        <button> Switch to Light Mode </button>
+        <button onClick={handleToggleTheme}> {theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"} </button>
     </div>
 }
