@@ -1,6 +1,6 @@
 // creating a Context
 
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 
 export const ThemeContext = createContext()
@@ -9,17 +9,17 @@ export const ThemeContext = createContext()
 // Provider Component 
 
 export const ThemeProvider = ({ children }) => {
-    const [theme, setTheme] = useState(second)
+    const [theme, setTheme] = useState("dark")
 
     return <ThemeContext.Provider value={theme} > {children}   </ThemeContext.Provider>
 }
 
 
 // Component 
-export const darkLightComp = () => {
+export const DarkLightComp = () => {
     return <div>
-        <h1></h1>
-        <p></p>
-        <button></button>
+        <h1> Dark Light Mode Website </h1>
+        <p> Hello !! My React v19 Fans </p>
+        <button> Switch to Light Mode </button>
     </div>
 }
