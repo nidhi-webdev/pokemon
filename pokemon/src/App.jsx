@@ -6,6 +6,7 @@ import Home from './contextAPI/Home'
 import About from './contextAPI/About'
 import { BioProvider } from './contextAPI/ContextApi'
 import { DarkLightComp, ThemeProvider } from './contextAPI/DaskLight'
+import { UseReducer } from './useReducer/UseReducer'
 
 
 const App = () => {
@@ -22,11 +23,11 @@ const App = () => {
         <About />
       </BioProvider> */}
 
-      <ThemeProvider>
+      {/* <ThemeProvider>
         <DarkLightComp />
-      </ThemeProvider>
+      </ThemeProvider> */}
 
-
+      <UseReducer />
     </div>
   )
 }
