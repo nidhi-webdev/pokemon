@@ -17,3 +17,16 @@ const Expensive = () => {
 }
 
 
+// parent 
+const MemoParentComponent = () => {
+    const [count, setCount] = useState(0)
+
+    return (
+        <div>
+            <Expensive />
+
+            <button onClick={() => setCount((count + 1 ))}> Re-render Parent </button>
+            <p> Parent re-renders: {count}  </p>
+        </div>
+    )
+}
