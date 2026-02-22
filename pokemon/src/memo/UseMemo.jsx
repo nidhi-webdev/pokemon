@@ -18,14 +18,15 @@ const Expensive = () => {
 
 
 // parent 
-const MemoParentComponent = () => {
+export const MemoParentComponent = () => {
     const [count, setCount] = useState(0)
 
     return (
-        <div>
+        <div className="flex flex-col justify-center items-center p-10 gap-6">
             <Expensive />
 
-            <button onClick={() => setCount((count + 1 ))}> Re-render Parent </button>
+            <button className="bg-sky-600 px-4 py-2 rounded text-white cursor-pointer"
+            onClick={() => setCount((count + 1 ))}> Re-render Parent </button>
             <p> Parent re-renders: {count}  </p>
         </div>
     )
