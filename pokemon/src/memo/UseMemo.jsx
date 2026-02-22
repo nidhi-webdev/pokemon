@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 
 
 const Expensive = () => {
@@ -12,7 +12,10 @@ const Expensive = () => {
         return i;  
      }
 
-     const total =  sum()
+     const total = useMemo(() => sum(), [])
+
+
+    //  const total =  sum()
      return <p> Sum: {total} </p>
 }
 
