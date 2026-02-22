@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { MemoCountChild } from './MemoCount'
+import  MemoCountChild  from './MemoCount'
 
 export const ReactMemoParent = () => {
     const [count, setCount] = useState(0)

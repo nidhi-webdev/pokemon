@@ -1,7 +1,6 @@
-import { useRef } from "react";
+import { useRef, memo } from "react";
 
-
-export const MemoCountChild = () => {
+const MemoCountChild = () => {
 const renderCount = useRef(0)
 console.log("I am from Render Count" ,renderCount);
 
@@ -14,3 +13,5 @@ return <>
      </p>
 </>
 }
+
+export default memo(MemoCountChild)
