@@ -7,6 +7,8 @@ import About from './contextAPI/About'
 import { BioProvider } from './contextAPI/ContextApi'
 import { DarkLightComp, ThemeProvider } from './contextAPI/DaskLight'
 import { UseReducer } from './useReducer/UseReducer'
+import { ReactMemoParent } from './memo/ReactMemo'
+
 
 
 const App = () => {
@@ -27,7 +29,9 @@ const App = () => {
         <DarkLightComp />
       </ThemeProvider> */}
 
-      <UseReducer />
+      {/* <UseReducer /> */}
+
+      <ReactMemoParent />
     </div>
   )
 }
