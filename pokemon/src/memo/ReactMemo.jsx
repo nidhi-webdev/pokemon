@@ -1,13 +1,16 @@
-import { useState } from "react"
+import { useMemo, useState } from "react"
 import MemoCountChild from './MemoCount'
 
 export const ReactMemoParent = () => {
     const [count, setCount] = useState(0)
 
-    const myBoiData = {
-        name: "Test",
-        age: 30
-    }
+   const myBoiData = useMemo(() => {
+        return {
+            name: "Test",
+            age: 30
+        }
+    }, [])
+
 
     return <>
         <div className="flex flex-col justify-center items-center p-10 gap-6">
