@@ -1,8 +1,8 @@
-import { useState, memo } from "react"
+import { useState, memo, useCallback } from "react"
 
 
 const Button = memo(({ onClick, children }) => {
-console.log(`Rendering Button: ${children}`)
+    console.log(`Rendering Button: ${children}`)
 
 
     return (
@@ -22,15 +22,18 @@ console.log(`Rendering Button: ${children}`)
 export const UseCallBack = () => {
     const [count, setCount] = useState(0)
 
-    const increment = () => {
+
+    const increment = useCallback(() => {
         console.log("Increment Inside");
         setCount((prev) => prev + 1)
+    }, [])
 
-    }
-
-    const decrement = () => {
+    const decrement = useCallback(() => {
+        console.log("Decrement Inside");
         setCount((prev) => prev - 1)
-    }
+    }, [])
+
+
 
     return (
         <div className="p-4 flex flex-col justify-center items-center h-1vh tracking-wider gap-4">
